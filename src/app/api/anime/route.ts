@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
 
 export async function GET(req: Request) {
-    return NextResponse.json({ response: "Manga" });
+    return NextResponse.json({ response: "Anime" });
 }

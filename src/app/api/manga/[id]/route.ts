@@ -8,5 +8,5 @@ interface Params {
 
 export async function GET(req: NextRequest, { params }: Params) {
     const id = params.id;
-    return NextResponse.json({ mangaId: id });
+    return NextResponse.json({ response: id });
 }

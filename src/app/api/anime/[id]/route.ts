@@ -5,5 +5,5 @@ export async function GET(
     { params }: { params: { id: string } }
 ) {
     const id = params.id;
-    return NextResponse.json({ animeId: id });
+    return NextResponse.json({ response: id });
 }
