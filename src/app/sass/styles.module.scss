@@ -1,0 +1,23 @@
+.navbar {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    // border: 1px solid red;
+    gap: 1rem;
+
+    a {
+        position: relative;
+        width: fit-content;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 1rem 1.5rem;
+
+        &:hover {
+            background-color: #131313;
+        }
+    }
+}
