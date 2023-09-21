@@ -6,14 +6,7 @@ import React from "react";
 const page = async () => {
     const data = await getAllAnime();
 
-    return (
-        <>
-            <h1> Anime List</h1>
-            <AnimeList data={data.response} />
-
-            <InputAnime />
-        </>
-    );
+    return <AnimeList data={data.response} />;
 };
 
 export default page;

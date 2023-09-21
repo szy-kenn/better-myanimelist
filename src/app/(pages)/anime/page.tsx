@@ -1,5 +1,4 @@
 import InputAnime from "@/components/InputAnime";
-import IAnime from "@/types/Anime.types";
 import { getAllAnime } from "@/utils";
 import { get } from "http";
 import React from "react";

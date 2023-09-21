@@ -1,10 +1,10 @@
 import { Document } from "mongoose";
 
-type AnimeType = "TV" | "Movie" | "Special" | "OVA" | "ONA";
-type AnimeStatus = "Not Aired Yet" | "Airing" | "Completed";
-type Season = "Winter" | "Spring" | "Summer" | "Fall";
+export type AnimeType = "TV" | "Movie" | "Special" | "OVA" | "ONA";
+export type AnimeStatus = "Not Aired Yet" | "Airing" | "Completed";
+export type Season = "Winter" | "Spring" | "Summer" | "Fall";
 
-interface IAnime extends Document {
+export interface IAnime extends Document {
     _id: string;
     title?: string;
     episodes?: number;
@@ -24,5 +24,3 @@ interface IAnime extends Document {
     source?: string;
     genres?: string[];
 }
-
-export default IAnime;

@@ -1,6 +1,5 @@
 import Anime from "@/models/Anime";
-import IAnime from "@/types/Anime.types";
-import { HydratedDocument } from "mongoose";
+import { IAnime, Season } from "@/types/Anime.types";
 
 const ANIME_API_URL = "http://127.0.0.1:3000/api/anime";
 const MANGA_API_URL = "http://127.0.0.1:3000/api/manga";
@@ -55,4 +54,41 @@ export const deleteAnime = async (id: string): Promise<Response> => {
             "Content-Type": "application/json",
         },
     });
+};
+
+export const showAiringDate = (airingDate?: {
+    startDate?: Date;
+    endDate?: Date;
+}) => {
+    if (!airingDate || (!airingDate.startDate && !airingDate.endDate)) {
+        return null;
+    }
+
+    if (!airingDate.endDate) {
+        return `${airingDate.startDate} - ??`;
+    }
+
+    return `${airingDate.startDate} - ${airingDate.startDate}`;
+};
+
+export const showSeasonPremiered = (seasonPremiered?: {
+    season?: Season;
+    year?: number;
+}) => {
+    if (
+        !seasonPremiered ||
+        (!seasonPremiered.season && !seasonPremiered.year)
+    ) {
+        return null;
+    }
+
+    if (!seasonPremiered.year) {
+        return seasonPremiered.season;
+    }
+
+    if (!seasonPremiered.season) {
+        return seasonPremiered.year;
+    }
+
+    return `${seasonPremiered.season} ${seasonPremiered.year}`;
 };

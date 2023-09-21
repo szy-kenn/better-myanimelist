@@ -1,6 +1,6 @@
 import dbConnect from "@/lib/dbConnect";
 import Anime from "@/models/Anime";
-import IAnime from "@/types/Anime.types";
+import { IAnime } from "@/types/Anime.types";
 import { HydratedDocument } from "mongoose";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -8,7 +8,7 @@ export async function GET() {
     await dbConnect();
 
     try {
-        const data = await Anime.find();
+        const data: IAnime[] = await Anime.find<IAnime>();
         return NextResponse.json({ response: data });
     } catch (error) {
         if (error instanceof Error) {

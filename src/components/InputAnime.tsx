@@ -31,8 +31,7 @@ const InputAnime = () => {
                 flexDirection: "column",
                 width: "15%",
                 gap: "0.25rem",
-            }}
-        >
+            }}>
             <input
                 type="text"
                 value={title}
@@ -48,8 +47,7 @@ const InputAnime = () => {
             <button
                 type="button"
                 style={{ color: "black" }}
-                onClick={handleClick}
-            >
+                onClick={handleClick}>
                 Submit
             </button>
         </div>
