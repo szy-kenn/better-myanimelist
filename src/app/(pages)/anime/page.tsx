@@ -1,14 +1,21 @@
+import InputAnime from "@/components/InputAnime";
+import IAnime from "@/types/Anime.types";
+import { getAllAnime } from "@/utils";
+import { get } from "http";
 import React from "react";
-
-const getData = async () => {
-    const res = await fetch("http://127.0.0.1:3000/api/anime");
-    const data = await res.json();
-    return data;
-};
+import AnimeList from "@/components/AnimeList";
 
 const page = async () => {
-    const data = await getData();
-    return <div>This is the Anime page ( {data.response} )</div>;
+    const data = await getAllAnime();
+
+    return (
+        <>
+            <h1> Anime List</h1>
+            <AnimeList data={data.response} />
+
+            <InputAnime />
+        </>
+    );
 };
 
 export default page;
