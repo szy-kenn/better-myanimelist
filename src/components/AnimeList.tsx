@@ -3,6 +3,8 @@ import { IAnime, Season } from "@/types/Anime.types";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { deleteAnime, showAiringDate, showSeasonPremiered } from "@/utils";
+import animeListStyle from "@/sass/anime-list.module.scss";
+import btnStyle from "@/sass/btn.module.scss";
 
 const AnimeList = ({ data }: { data: IAnime[] }) => {
     const router = useRouter();
@@ -28,13 +30,13 @@ const AnimeList = ({ data }: { data: IAnime[] }) => {
      */
 
     return (
-        <div className="flex flex-col gap-2 border-red-400 p-4">
-            <h1 className="text-base">Anime List</h1>
-            <div className="flex flex-row gap-2">
-                <button className="rounded-md border-neutral-400 bg-green-500 px-4 py-2">
+        <div className={animeListStyle.list}>
+            <h1>Anime List</h1>
+            <div className={animeListStyle["btn-group"]}>
+                <button className={`${btnStyle.btn} ${btnStyle.success}`}>
                     Add Anime
                 </button>
-                <button className="rounded-md border-neutral-400 bg-red-500 px-4 py-2">
+                <button className={`${btnStyle.btn} ${btnStyle.danger}`}>
                     Delete Anime
                 </button>
             </div>
