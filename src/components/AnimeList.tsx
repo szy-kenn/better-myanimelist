@@ -1,15 +1,24 @@
 "use client";
 import { IAnime, Season } from "@/types/Anime.types";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 import { deleteAnime, showAiringDate, showSeasonPremiered } from "@/utils";
 import animeListStyle from "@/sass/anime-list.module.scss";
 import btnStyle from "@/sass/btn.module.scss";
 
+const PopupForm = ({ className }: { className: string }) => {
+    return <div className={className}>Popup</div>;
+};
+
 const AnimeList = ({ data }: { data: IAnime[] }) => {
     const router = useRouter();
+    const [popupDisplayed, setPopupDisplayed] = useState(false);
 
-    const handleClick = (id: string) => {
+    const handleAddClick = () => {
+        setPopupDisplayed(true);
+    };
+
+    const handleDeleteClick = (id: string) => {
         deleteAnime(id)
             .then((response) => {
                 console.log(response);
@@ -20,20 +29,23 @@ const AnimeList = ({ data }: { data: IAnime[] }) => {
             });
     };
 
-    /**
-     * Generate the function comment for the given function body.
-     *
-     * @param {object} airingDate - An object containing the start and end dates of airing.
-     * @param {Date} airingDate.startDate - The start date of airing.
-     * @param {Date} airingDate.endDate - The end date of airing.
-     * @returns {string | null} The formatted string representing the airing dates.
-     */
-
     return (
         <div className={animeListStyle.list}>
+            {popupDisplayed ? (
+                <PopupForm
+                    className={`${animeListStyle.popup} ${animeListStyle.displayed}`}
+                />
+            ) : (
+                <PopupForm
+                    className={`${animeListStyle.popup} ${animeListStyle.hidden}`}
+                />
+            )}
+
             <h1>Anime List</h1>
             <div className={animeListStyle["btn-group"]}>
-                <button className={`${btnStyle.btn} ${btnStyle.success}`}>
+                <button
+                    className={`${btnStyle.btn} ${btnStyle.success}`}
+                    onClick={handleAddClick}>
                     Add Anime
                 </button>
                 <button className={`${btnStyle.btn} ${btnStyle.danger}`}>
@@ -57,10 +69,10 @@ const AnimeList = ({ data }: { data: IAnime[] }) => {
                             <p>Type</p>
                         </th>
                         <th>
-                            <p>Airing Date</p>
+                            <p>Date Aired</p>
                         </th>
                         <th>
-                            <p>Season Premiered</p>
+                            <p>Season</p>
                         </th>
                         <th>
                             <p>Status</p>
@@ -103,7 +115,12 @@ const AnimeList = ({ data }: { data: IAnime[] }) => {
                                 <p>{anime.genres}</p>
                             </td>
                             <td key={anime._id}>
-                                <button>Delete</button>
+                                <button
+                                    onClick={() =>
+                                        handleDeleteClick(anime._id)
+                                    }>
+                                    Delete
+                                </button>
                             </td>
                         </tr>
                     ))}
