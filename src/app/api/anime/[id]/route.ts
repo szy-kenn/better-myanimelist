@@ -13,18 +13,26 @@ export async function GET(
     return NextResponse.json({ response: id });
 }
 
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
+export async function PATCH(req: NextRequest) {
     await dbConnect();
 
-    if (req.body) {
-        try {
-            const newAnime: HydratedDocument<IAnime> = await new Anime(
-                req.body
-            );
-            res.status(201).json({ "success": true, "data": newAnime });
-        } catch (error) {
-            res.status(400).json({ "success": false });
+    try {
+        const data = await req.json();
+        const keys = Object.keys(data);
+        const anime: IAnime | null = await Anime.findById(data._id);
+
+        if (anime === null) {
+            return NextResponse.json({ success: false });
+        } else {
+            for (const key of keys) {
+                anime.set(key, data[key]);
+            }
         }
+
+        await anime.save();
+        return NextResponse.json({ success: true, data: anime });
+    } catch (error) {
+        return NextResponse.json({ success: false });
     }
 }
 

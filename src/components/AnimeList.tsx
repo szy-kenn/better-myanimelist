@@ -2,18 +2,13 @@
 import IAnime from "@/types/Anime.types";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { deleteAnime } from "@/utils";
 
 const AnimeList = ({ data }: { data: IAnime[] }) => {
     const router = useRouter();
 
     const handleClick = (id: string) => {
-        fetch(`/api/anime/${id}`, {
-            method: "DELETE",
-            body: JSON.stringify({ id: id }),
-            headers: {
-                "Content-Type": "application/json",
-            },
-        })
+        deleteAnime(id)
             .then((response) => {
                 console.log(response);
                 router.refresh();
