@@ -29,8 +29,18 @@ export const getAnime = async (id: string) => {
     return data;
 };
 
+export const postAnime = async (data: object): Promise<Response> => {
+    return fetch(ANIME_API_URL, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            "Content-Type": "application/json",
+        },
+    });
+}
+
 // create a function for patch method
-export const patchAnime = async (id: string, data: IAnime) => {
+export const patchAnime = async (id: string, data: IAnime): Promise<Response> => {
     return fetch(`${ANIME_API_URL}/${id}`, {
         method: "PATCH",
         body: JSON.stringify(data),
@@ -64,11 +74,19 @@ export const showAiringDate = (airingDate?: {
         return null;
     }
 
-    if (!airingDate.endDate) {
-        return `${airingDate.startDate} - ??`;
+    if (airingDate.startDate != null) {
+
+        if (!airingDate.endDate) {
+            return `${new Date(airingDate.startDate).toLocaleDateString('en-us', 
+            { year: '2-digit', month: 'numeric', day: 'numeric' })} - ??`;
+        }
+
+        return `${new Date(airingDate.startDate).toLocaleDateString('en-us', 
+        { year: '2-digit', month: 'numeric', day: 'numeric' })} 
+        - ${new Date(airingDate.endDate).toLocaleDateString('en-us', 
+        { year: '2-digit', month: 'numeric', day: 'numeric' })}`;
     }
 
-    return `${airingDate.startDate} - ${airingDate.startDate}`;
 };
 
 export const showSeasonPremiered = (seasonPremiered?: {

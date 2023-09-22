@@ -1,6 +1,6 @@
 import dbConnect from "@/lib/dbConnect";
 import Anime from "@/models/Anime";
-import IAnime from "@/types/Anime.types";
+import { IAnime } from "@/types/Anime.types";
 import { HydratedDocument } from "mongoose";
 import React from "react";
 

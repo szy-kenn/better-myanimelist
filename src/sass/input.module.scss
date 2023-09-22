@@ -1,0 +1,44 @@
+.container {
+    position: relative;
+    width: 100%;
+
+    &::before {
+        content: attr(data-content);
+        text-transform: capitalize;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 20%;
+        font-size: 0.625rem;
+        padding: 0.5rem 1rem;
+        background: #555555;
+        border-radius: 0.5rem 0 0 0.5rem;
+        z-index: 1;
+    }
+
+    &.focused {
+        &::before {
+            background: #888888;
+        }
+    }
+
+    input {
+        position: relative;
+        height: 100%;
+        width: inherit;
+        border: 1px solid #555555;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        font-size: 0.825rem;
+        padding-inline-start: 22.5%;
+
+        &:focus {
+            border: 1px solid #888888;
+            outline: none;
+        }
+    }
+}

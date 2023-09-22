@@ -8,7 +8,7 @@ export async function GET() {
     await dbConnect();
 
     try {
-        const data: IAnime[] = await Anime.find<IAnime>();
+        const data: IAnime[] = await Anime.find<IAnime>().sort({_id: -1});
         return NextResponse.json({ response: data });
     } catch (error) {
         if (error instanceof Error) {

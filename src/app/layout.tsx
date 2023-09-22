@@ -1,14 +1,18 @@
 import "./globals.css";
+import { Inter } from "next/font/google";
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
-import Footer from "../components/Footer";
+// import { Hanken_Grotesk } from "next/font/google";
 
-// const inter = Inter({ subsets: ["latin"] });
-const poppins = Poppins({
-    subsets: ["latin"],
-    weight: ["300", "400", "500", "600", "700", "800", "900"],
-    style: ["normal", "italic"],
-});
+// const font = Hanken_Grotesk({ subsets: ["latin"] });
+
+// import Footer from "../components/Footer";
+
+const inter = Inter({ subsets: ["latin"], display: "swap", preload: true });
+// const poppins = Poppins({
+//     subsets: ["latin"],
+//     weight: ["300", "400", "500", "600", "700", "800", "900"],
+//     style: ["normal", "italic"],
+// });
 
 export const metadata: Metadata = {
     title: "MyBetterAnimeList",
@@ -22,9 +26,10 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={poppins.className}>
+            <head />
+            <body style={inter.style}>
                 {children}
-                <Footer />
+                {/* <Footer /> */}
             </body>
         </html>
     );

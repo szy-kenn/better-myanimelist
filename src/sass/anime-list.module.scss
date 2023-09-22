@@ -1,7 +1,7 @@
 .list {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -19,10 +19,13 @@
     }
 
     table {
+        display: block;
         position: relative;
-        width: 95%;
+        // width: 100%;
+        height: 100%;
         margin-inline: auto;
         border-spacing: 0;
+        overflow-y: scroll;
 
         thead {
             tr {
@@ -55,6 +58,7 @@
 
 .popup {
     display: flex;
+    flex-direction: column;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -62,10 +66,11 @@
     height: 90%;
     border: 1px solid #444444;
     border-radius: 10px;
-    padding: 1rem;
     z-index: 1;
-    background: #222222;
+    background: #232323;
     transition: all 0.1s ease;
+    padding: 1.5rem;
+    gap: 1rem;
 
     &.hidden {
         transform: translate(-50%, -50%) scale(0);
@@ -74,5 +79,33 @@
     &.displayed {
         transform: translate(-50%, -50%) scale(1);
         transition: all 0.1s ease;
+    }
+
+    .topbar {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 7.5%;
+        padding: 0 0.5rem;
+
+        h1 {
+            position: relative;
+            font-size: 1rem;
+            text-align: center;
+            margin-block: auto;
+            text-transform: uppercase;
+        }
+
+        svg {
+            position: relative;
+            height: 75%;
+            fill: #dddddd;
+            cursor: pointer;
+        }
+    }
+
+    hr {
+        border-color: #444444;
     }
 }
