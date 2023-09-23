@@ -3,6 +3,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Todo
 
 [ ] - add loader when deleting an item
+[ ] - make Button components based on type/state
 
 ## Getting Started
 

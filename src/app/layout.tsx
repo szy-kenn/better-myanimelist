@@ -1,11 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
-// import { Hanken_Grotesk } from "next/font/google";
-
-// const font = Hanken_Grotesk({ subsets: ["latin"] });
-
-// import Footer from "../components/Footer";
+import Footer from "../components/Footer";
 
 const inter = Inter({ subsets: ["latin"], display: "swap", preload: true });
 // const poppins = Poppins({
@@ -29,7 +25,7 @@ export default function RootLayout({
             <head />
             <body style={inter.style}>
                 {children}
-                {/* <Footer /> */}
+                <Footer />
             </body>
         </html>
     );
