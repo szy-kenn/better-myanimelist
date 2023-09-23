@@ -28,7 +28,6 @@
         table {
             position: relative;
             width: 100%;
-            height: 100%;
             margin-inline: auto;
             border-spacing: 0;
 
@@ -37,7 +36,6 @@
                     border-bottom: 2px solid #333333;
 
                     th {
-                        // background: #333333;
                         p {
                             text-align: left;
                             text-transform: uppercase;
@@ -113,5 +111,16 @@
 
     hr {
         border-color: #444444;
+    }
+}
+
+.rolling {
+    margin-right: -2px;
+    display: block;
+    animation-play-state: paused;
+
+    circle {
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        animation-play-state: paused;
     }
 }
