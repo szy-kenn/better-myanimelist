@@ -1,5 +1,7 @@
-import Anime from "@/models/Anime";
-import { IAnime, Season } from "@/types/Anime.types";
+import AnimeSchema from "@/models/Anime";
+import { Anime, Season } from "@/types/Anime.type";
+import { BMalApiResponse } from "@/types/BMalApiResponse.type";
+import { NextResponse } from "next/server";
 
 const ANIME_API_URL = "http://127.0.0.1:3000/api/anime";
 const MANGA_API_URL = "http://127.0.0.1:3000/api/manga";
@@ -23,10 +25,10 @@ export const getAllAnime = async () => {
  * @param {string} id - The ID of the anime.
  * @return {Promise<object>} The anime data.
  */
-export const getAnime = async (id: string) => {
-    const response = await fetch(`${ANIME_API_URL}/${id}`);
-    const data = await response.json();
-    return data;
+export const getAnime = async (id: string): Promise<Response> => {
+    return fetch(`${ANIME_API_URL}/${id}`, {
+        cache: "no-store",
+    });
 };
 
 export const postAnime = async (data: object): Promise<Response> => {
@@ -37,10 +39,13 @@ export const postAnime = async (data: object): Promise<Response> => {
             "Content-Type": "application/json",
         },
     });
-}
+};
 
 // create a function for patch method
-export const patchAnime = async (id: string, data: IAnime): Promise<Response> => {
+export const patchAnime = async (
+    id: string,
+    data: Anime
+): Promise<Response> => {
     return fetch(`${ANIME_API_URL}/${id}`, {
         method: "PATCH",
         body: JSON.stringify(data),
@@ -75,18 +80,24 @@ export const showAiringDate = (airingDate?: {
     }
 
     if (airingDate.startDate != null) {
-
         if (!airingDate.endDate) {
-            return `${new Date(airingDate.startDate).toLocaleDateString('en-us', 
-            { year: '2-digit', month: 'numeric', day: 'numeric' })} - ??`;
+            return `${new Date(airingDate.startDate).toLocaleDateString(
+                "en-us",
+                { year: "2-digit", month: "numeric", day: "numeric" }
+            )} - ??`;
         }
 
-        return `${new Date(airingDate.startDate).toLocaleDateString('en-us', 
-        { year: '2-digit', month: 'numeric', day: 'numeric' })} 
-        - ${new Date(airingDate.endDate).toLocaleDateString('en-us', 
-        { year: '2-digit', month: 'numeric', day: 'numeric' })}`;
+        return `${new Date(airingDate.startDate).toLocaleDateString("en-us", {
+            year: "2-digit",
+            month: "numeric",
+            day: "numeric",
+        })} 
+        - ${new Date(airingDate.endDate).toLocaleDateString("en-us", {
+            year: "2-digit",
+            month: "numeric",
+            day: "numeric",
+        })}`;
     }
-
 };
 
 export const showSeasonPremiered = (seasonPremiered?: {

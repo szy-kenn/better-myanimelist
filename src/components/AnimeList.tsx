@@ -1,13 +1,14 @@
 "use client";
+
 import animeListStyle from "@/sass/anime-list.module.scss";
 import btnStyle from "@/sass/btn.module.scss";
-import { IAnime, Season } from "@/types/Anime.types";
+import { Anime } from "@/types/Anime.type";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { deleteAnime, showAiringDate, showSeasonPremiered } from "@/utils";
 import PopupForm from "./PopupForm";
 
-const AnimeList = ({ data }: { data: IAnime[] }) => {
+const AnimeList = ({ data }: { data: Anime[] }) => {
     const router = useRouter();
     const [popupDisplayed, setPopupDisplayed] = useState(false);
 
@@ -92,7 +93,7 @@ const AnimeList = ({ data }: { data: IAnime[] }) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {data.map((anime: IAnime) => (
+                        {data.map((anime: Anime) => (
                             <tr key={anime._id}>
                                 <td>
                                     <p>{anime._id}</p>

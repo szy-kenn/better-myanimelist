@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
-import IAnime from "@/types/Anime.types";
+import { Anime } from "@/types/Anime.type";
 
-const AnimeSchema = new Schema<IAnime>({
+const AnimeSchema = new Schema<Anime>({
     title: {
         type: String,
         required: true,
@@ -55,5 +55,5 @@ const AnimeSchema = new Schema<IAnime>({
     },
 });
 
-export default mongoose.models.Anime ||
-    mongoose.model<IAnime>("Anime", AnimeSchema);
+export default mongoose.models.AnimeSchema ||
+    mongoose.model<Anime>("AnimeSchema", AnimeSchema);
