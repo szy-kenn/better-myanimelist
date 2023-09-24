@@ -1,15 +1,15 @@
+import MainPage from "@/components/MainPage";
 import dbConnect from "@/lib/dbConnect";
-import Anime from "@/models/Anime";
-import { IAnime } from "@/types/Anime.type";
+import AnimeSchema from "@/models/Anime";
 import { HydratedDocument } from "mongoose";
 import React from "react";
 
 const Page = async () => {
     await dbConnect();
 
-    const res = await Anime.find();
+    const res = await AnimeSchema.find();
 
-    return <div>This is a home page. ({res.length})</div>;
+    return <MainPage />;
 };
 
 export default Page;
