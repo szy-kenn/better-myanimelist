@@ -29,23 +29,14 @@ const Navbar = () => {
                         {" "}
                         <p>Forums</p>
                     </Link>
-                    <Link href={"/socials"}>
-                        {" "}
-                        <p>Socials</p>
-                    </Link>
-                    <Link href={"/help"}>
-                        {" "}
-                        <p>Help</p>
-                    </Link>
                 </div>
                 <Searchbar />
                 <div className="login-container">
-                    <button>Login</button>
+                    <p>Login</p>
                     <span>or</span>
-                    <p>Sign-up</p>
+                    <button>Sign-up</button>
                 </div>
             </div>
-            <Alert />
         </>
     );
 };
