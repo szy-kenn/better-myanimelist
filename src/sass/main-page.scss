@@ -1,0 +1,16 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    gap: 1rem;
+    height: 100%;
+
+    h1 {
+        font-weight: bold;
+    }
+
+    .cards {
+        display: flex;
+        gap: 1rem;
+    }
+}

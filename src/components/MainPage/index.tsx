@@ -1,5 +1,8 @@
 import React from "react";
 import Alert from "../Navbar/Alert";
+import Card from "../Card";
+import "@/sass/main-page.scss";
+
 const MainPage = () => {
     return (
         <>
@@ -8,7 +11,15 @@ const MainPage = () => {
                 type="info"
                 heading="Update"
             />
-            <div>Home Page</div>
+            <div className="main">
+                <h1>Popular This Season</h1>
+                <div className="cards">
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                </div>
+            </div>
         </>
     );
 };
