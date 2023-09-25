@@ -1,0 +1,49 @@
+.searchbar {
+    position: relative;
+    background: none;
+    padding: 0.5rem 1rem;
+    height: 100%;
+
+    div {
+        position: relative;
+        display: flex;
+        height: 100%;
+
+        &.blurred {
+            svg {
+                fill: rgba(white, 0.5);
+                left: 0;
+            }
+        }
+
+        &.focused {
+            svg {
+                fill: rgba(white, 1);
+                left: 100%;
+                transform: translateX(-100%) translateY(-50%);
+            }
+        }
+
+        input {
+            background: none;
+            border-bottom: 2px solid rgba(white, 0.5);
+            font-size: 0.875rem;
+            padding: 0.25rem 0.5rem;
+            font-weight: bold;
+            transition: all 0.1s ease;
+
+            &:focus {
+                outline: none;
+                border-color: rgba(white, 1);
+            }
+        }
+
+        svg {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.1s ease;
+            height: 1rem;
+        }
+    }
+}
