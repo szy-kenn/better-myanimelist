@@ -1,5 +1,5 @@
 import React from "react";
-import "@/sass/alert.scss";
+import "@/sass/components/alert.scss";
 import { BsCheckCircleFill } from "react-icons/bs";
 
 type AlertType = "success" | "danger" | "warning" | "info";

@@ -1,8 +1,7 @@
 import React from "react";
 import Searchbar from "./Searchbar";
-import Alert from "./Alert";
 import localFont from "next/font/local";
-import "@/sass/navbar.scss";
+import "@/sass/components/navbar.scss";
 import Link from "next/link";
 
 const font = localFont({ src: "../../assets/fonts/AGRevueCyr-Roman.ttf" });

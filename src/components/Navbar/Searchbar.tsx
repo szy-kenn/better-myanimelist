@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState } from "react";
-import "@/sass/searchbar.scss";
+import "@/sass/components/searchbar.scss";
 import { BiSearch } from "react-icons/bi";
 const Searchbar = () => {
     const [searchText, setSearchText] = useState("");

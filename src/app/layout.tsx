@@ -1,14 +1,10 @@
-import "./globals.css";
+import "@/sass/base/globals.scss";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import Footer from "../components/Footer";
 import Navbar from "@/components/Navbar";
+
 const inter = Inter({ subsets: ["latin"], display: "swap", preload: true });
-// const poppins = Poppins({
-//     subsets: ["latin"],
-//     weight: ["300", "400", "500", "600", "700", "800", "900"],
-//     style: ["normal", "italic"],
-// });
 
 export const metadata: Metadata = {
     title: "MyBetterAnimeList",

@@ -1,6 +1,5 @@
 import React from "react";
 import Alert from "../Navbar/Alert";
-import Card from "../Card";
 import "@/sass/main-page.scss";
 
 const MainPage = () => {
@@ -12,13 +11,8 @@ const MainPage = () => {
                 heading="Update"
             />
             <div className="main">
-                <h1>Popular This Season</h1>
-                <div className="cards">
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                </div>
+                <div className="content-container">Contents</div>
+                <div className="sidebar-container">Sidebar</div>
             </div>
         </>
     );

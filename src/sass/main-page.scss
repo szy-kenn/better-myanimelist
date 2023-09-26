@@ -1,16 +1,13 @@
 .main {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem 2rem;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
     height: 100%;
 
-    h1 {
-        font-weight: bold;
+    .content-container {
+        position: relative;
     }
 
-    .cards {
-        display: flex;
-        gap: 1rem;
+    .sidebar-container {
+        position: relative;
     }
 }
