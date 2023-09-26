@@ -1,0 +1,20 @@
+@use "./variables.scss" as *;
+
+@mixin flex($align: center, $justify: center, $direction: row) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+@mixin padding-small {
+    padding: $pd-small;
+}
+
+@mixin padding-normal {
+    padding: $pd-normal;
+}
+
+@mixin padding-large {
+    padding: $pd-large;
+}

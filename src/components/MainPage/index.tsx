@@ -1,6 +1,7 @@
 import React from "react";
 import Alert from "../Navbar/Alert";
-import "@/sass/main-page.scss";
+import "@/sass/pages/main.scss";
+import CategoryContainer from "./CategoryContainer";
 
 const MainPage = () => {
     return (
@@ -11,7 +12,12 @@ const MainPage = () => {
                 heading="Update"
             />
             <div className="main">
-                <div className="content-container">Contents</div>
+                <div className="content-container">
+                    <CategoryContainer heading="Popular This Season" />
+                    <CategoryContainer heading="Popular This Season" />
+                    <CategoryContainer heading="Popular This Season" />
+                    <CategoryContainer heading="Popular This Season" />
+                </div>
                 <div className="sidebar-container">Sidebar</div>
             </div>
         </>

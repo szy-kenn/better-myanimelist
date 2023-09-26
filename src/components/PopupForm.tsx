@@ -3,7 +3,6 @@ import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.share
 import { postAnime } from "@/utils";
 import { useState } from "react";
 import animeListStyle from "@/sass/anime-list.module.scss";
-import btnStyle from "@/sass/btn.module.scss";
 
 const PopupForm = ({
     className,
@@ -101,9 +100,7 @@ const PopupForm = ({
                 valueKey="endDate"
                 onChange={handleChange}
             />
-            <button
-                className={`${btnStyle.success} ${btnStyle.btn}`}
-                onClick={handleSubmit}>
+            <button className="success" onClick={handleSubmit}>
                 Submit
             </button>
         </div>

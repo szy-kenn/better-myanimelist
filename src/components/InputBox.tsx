@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import inputStyle from "@/sass/input.module.scss";
+import "@/sass/components/input-box.scss";
 
 const InputBox = ({
     type,
@@ -30,9 +30,7 @@ const InputBox = ({
 
     return (
         <div
-            className={
-                inputStyle.container + " " + (focused ? inputStyle.focused : "")
-            }
+            className={"container" + (focused ? " focused" : "")}
             data-content={text}
             ref={divRef}
             onClick={handleClick}>

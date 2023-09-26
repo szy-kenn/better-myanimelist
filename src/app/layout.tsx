@@ -1,4 +1,4 @@
-import "@/sass/base/globals.scss";
+import "@/sass/style.scss";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import Footer from "../components/Footer";

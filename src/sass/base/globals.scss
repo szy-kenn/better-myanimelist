@@ -1,18 +1,11 @@
-:root {
-    --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-        "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-        "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-
-    --dark-bg-color: #121212;
-    --dark-secondary-color: #222222;
-}
-
 @media (prefers-color-scheme: dark) {
     // :root {
     // }
 }
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     padding: 0;
     margin: 0;

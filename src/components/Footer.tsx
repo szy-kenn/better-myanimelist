@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "../sass/styles.module.scss";
+import "@/sass/components/footer.scss";
 import Link from "next/link";
 
 const Footer = () => {
     return (
-        <footer className={styles.footer}>
+        <footer className="footer">
             <Link href="/home">Home</Link>
             <Link href="/about">About</Link>
             <Link href="/support">Support</Link>

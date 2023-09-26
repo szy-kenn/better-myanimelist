@@ -1,7 +1,6 @@
 "use client";
 
 import animeListStyle from "@/sass/anime-list.module.scss";
-import btnStyle from "@/sass/btn.module.scss";
 import { Anime } from "@/types/Anime.type";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -49,14 +48,10 @@ const AnimeList = ({ data }: { data: Anime[] }) => {
 
             <h1>Anime List</h1>
             <div className={animeListStyle["btn-group"]}>
-                <button
-                    className={`${btnStyle.btn} ${btnStyle.success}`}
-                    onClick={handleAddClick}>
+                <button className="success" onClick={handleAddClick}>
                     Add Anime
                 </button>
-                <button className={`${btnStyle.btn} ${btnStyle.danger}`}>
-                    Delete Anime
-                </button>
+                <button className="danger">Delete Anime</button>
             </div>
 
             <div className={animeListStyle.tableContainer}>
