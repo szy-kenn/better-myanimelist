@@ -3,6 +3,7 @@
     position: relative;
     border-radius: 5px;
     overflow: hidden;
+    animation: enter 0.1s ease-out forwards;
     // border: 1px solid red;
 
     &::before {
@@ -22,5 +23,17 @@
         height: auto;
         aspect-ratio: 9 / 16;
         object-fit: cover;
+    }
+}
+
+@keyframes enter {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
     }
 }

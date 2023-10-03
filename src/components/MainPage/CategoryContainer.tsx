@@ -20,20 +20,18 @@ const CategoryContainer = ({ heading }: { heading: string }) => {
     };
 
     const handleResize = () => {
-        if (cardsContainerRef.current) {
-            if (window.innerWidth >= 1440) {
-                setCardWidth("15%");
-            } else if (window.innerWidth >= 769 && window.innerWidth < 1439) {
-                setCardWidth("18.5%");
-            } else if (window.innerWidth > 641) {
-                setCardWidth("23%");
-            } else if (window.innerWidth > 468) {
-                setCardWidth("30%");
-            } else if (window.innerWidth > 249) {
-                setCardWidth("45%");
-            } else {
-                setCardWidth("100%");
-            }
+        if (window.innerWidth >= 1440) {
+            setCardWidth("15%");
+        } else if (window.innerWidth >= 769 && window.innerWidth < 1439) {
+            setCardWidth("18.5%");
+        } else if (window.innerWidth > 641) {
+            setCardWidth("23%");
+        } else if (window.innerWidth > 399) {
+            setCardWidth("30%");
+        } else if (window.innerWidth > 249) {
+            setCardWidth("45%");
+        } else {
+            setCardWidth("100%");
         }
     };
 
