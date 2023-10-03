@@ -7,6 +7,14 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 -   [ ] -   responsive navbar
 -   [x] -   responsive card container
 
+## Tools Used
+
+-   Next.js
+-   TypeScript
+-   Sass
+-   Mongoose
+-   Prettier
+
 ## Getting Started
 
 First, run the development server:

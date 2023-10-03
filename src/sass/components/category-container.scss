@@ -14,55 +14,8 @@
         position: inherit;
         display: grid;
         grid-template-columns: repeat(auto-fit, var(--card-width));
+        // gap: 0.5rem;
         row-gap: 1rem;
         place-content: space-around space-evenly;
-    }
-}
-
-@media screen and (min-width: 1440px) {
-    .container {
-        .cards {
-            --card-width: 11%;
-        }
-    }
-}
-
-@media screen and (min-width: 769px) and (max-width: 1439px) {
-    .container {
-        .cards {
-            --card-width: 18.5%;
-        }
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .container {
-        .cards {
-            --card-width: 23%;
-        }
-    }
-}
-
-@media screen and (max-width: 640px) {
-    .container {
-        .cards {
-            --card-width: 30%;
-        }
-    }
-}
-
-@media screen and (max-width: 468px) {
-    .container {
-        .cards {
-            --card-width: 45%;
-        }
-    }
-}
-
-@media screen and (max-width: 249px) {
-    .container {
-        .cards {
-            --card-width: 100%;
-        }
     }
 }
