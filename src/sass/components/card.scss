@@ -1,23 +1,15 @@
 .card-container {
     display: flex;
     position: relative;
-    // width: 100%;
-    // width: 10rem;
-    // height: clamp(13rem, 14vw, 15.625rem);
-    // height: max(25vw, 15.625rem);
-    // width: 10rem;
-    // width: max(10.76vw, 9.6875rem);
     border-radius: 5px;
     overflow: hidden;
-    border: 1px solid red;
+    // border: 1px solid red;
 
     &::before {
         content: "Steins;Gate";
         position: absolute;
         bottom: 0;
         left: 0;
-        // height: 10%;
-        // width: 100%;
         padding: 0.5rem;
         font-size: 0.825rem;
         background: rgba(#222, 0.85);
@@ -26,11 +18,9 @@
 
     img {
         position: relative;
-        height: 100%;
         width: 100%;
-        // height: max(25vw, 15.625rem);
-        // width: max(10.76vw, 9.6875rem);
-        aspect-ratio: 1;
-        object-fit: contain;
+        height: auto;
+        aspect-ratio: 9 / 16;
+        object-fit: cover;
     }
 }

@@ -12,6 +12,9 @@ const CategoryContainer = ({ heading }: { heading: string }) => {
                 <Card />
                 <Card />
                 <Card />
+                <Card />
+                <Card />
+                <Card />
             </div>
         </div>
     );
