@@ -13,10 +13,10 @@ const MainPage = () => {
             />
             <div className="main">
                 <div className="content-container">
-                    <CategoryContainer heading="Popular This Season" />
-                    <CategoryContainer heading="Popular This Season" />
-                    <CategoryContainer heading="Popular This Season" />
-                    <CategoryContainer heading="Popular This Season" />
+                    <CategoryContainer heading="Trending This Week" />
+                    <CategoryContainer heading="Top Anime This Season" />
+                    <CategoryContainer heading="Top Anime of All Time" />
+                    <CategoryContainer heading="Top Upcoming Anime" />
                 </div>
                 <div className="sidebar-container">Sidebar</div>
             </div>

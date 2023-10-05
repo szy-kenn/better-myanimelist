@@ -9,10 +9,10 @@ const CategoryContainer = ({ heading }: { heading: string }) => {
     const [cardWidth, setCardWidth] = useState("");
     const [gridColumnCount, setGridColumnCount] = useState(0);
 
-    const generateCards = () => {
+    const generateCards = (numberOfCards: number) => {
         const cards: JSX.Element[] = [];
 
-        for (let i = 0; i < gridColumnCount; i++) {
+        for (let i = 0; i < numberOfCards; i++) {
             cards.push(<Card key={i} />);
         }
 
@@ -57,15 +57,7 @@ const CategoryContainer = ({ heading }: { heading: string }) => {
                 className="cards"
                 ref={cardsContainerRef}
                 style={{ "--card-width": cardWidth } as CSSProperties}>
-                <Card />
-                {gridColumnCount > 1 ? <Card /> : null}
-                {gridColumnCount > 2 ? <Card /> : null}
-                {gridColumnCount > 3 ? <Card /> : null}
-                {gridColumnCount > 4 ? <Card /> : null}
-                {gridColumnCount > 5 ? <Card /> : null}
-                {gridColumnCount > 6 ? <Card /> : null}
-                {gridColumnCount > 7 ? <Card /> : null}
-                {gridColumnCount > 8 ? <Card /> : null}
+                {generateCards(gridColumnCount)}
             </div>
         </div>
     );
