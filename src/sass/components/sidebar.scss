@@ -1,4 +1,5 @@
 @use "../abstracts/variables.scss" as *;
+@use "../abstracts/mixins.scss" as *;
 
 .sidebar-container {
     position: relative;
@@ -10,9 +11,10 @@
     max-width: 350px;
     max-height: none;
 
-    div {
+    .top-anime-section,
+    .statistics-section {
         background-color: $dark-secondary-color;
-        padding: 1.5rem 1rem;
+        padding: 1.5rem 1.75rem;
         border-radius: 5px;
         font-weight: 500;
     }
@@ -27,6 +29,35 @@
     }
 
     .statistics-section {
+        position: inherit;
+        display: flex;
+        flex-direction: column;
+
+        .statistics-container {
+            display: flex;
+            position: relative;
+            height: 100%;
+            width: 100%;
+            gap: 0.5rem;
+            @include flex(center, space-between);
+
+            div {
+                @include flex(center, center, column);
+                text-align: center;
+                gap: 0.25rem;
+            }
+
+            h1 {
+                font-size: 1.125rem;
+                color: scale-color($color: $dark-main-color, $lightness: 50%);
+                font-weight: bold;
+            }
+
+            h3 {
+                font-size: 0.825rem;
+                font-weight: 300;
+            }
+        }
     }
 
     .top-anime-section {

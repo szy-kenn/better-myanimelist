@@ -46,6 +46,11 @@
         .sidebar-container {
             max-width: none;
             max-height: 200px;
+            grid-template-rows: 1fr;
+
+            .top-anime-section {
+                display: none;
+            }
         }
     }
 }
