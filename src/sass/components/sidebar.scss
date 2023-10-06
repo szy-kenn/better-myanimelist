@@ -1,0 +1,34 @@
+@use "../abstracts/variables.scss" as *;
+
+.sidebar-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.15fr 0.85fr;
+    grid-area: sidebar;
+    gap: 1rem;
+    max-width: 350px;
+    max-height: none;
+
+    div {
+        background-color: $dark-secondary-color;
+        padding: 1.5rem 1rem;
+        border-radius: 5px;
+        font-weight: 500;
+    }
+
+    hr {
+        position: relative;
+        border: none;
+        background-color: rgba(white, 0.15);
+        height: 2px;
+        width: 100%;
+        margin-block: 1rem;
+    }
+
+    .statistics-section {
+    }
+
+    .top-anime-section {
+    }
+}

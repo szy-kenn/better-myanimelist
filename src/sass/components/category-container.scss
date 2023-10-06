@@ -14,7 +14,6 @@
         position: inherit;
         display: grid;
         grid-template-columns: repeat(auto-fit, var(--card-width));
-        // gap: 0.5rem;
         row-gap: 1rem;
         place-content: space-around space-between;
     }

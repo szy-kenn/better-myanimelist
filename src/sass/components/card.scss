@@ -4,16 +4,16 @@
     border-radius: 5px;
     overflow: hidden;
     animation: enter 0.1s ease-out forwards;
-    // border: 1px solid red;
 
     &::before {
         content: "Steins;Gate";
         position: absolute;
         bottom: 0;
         left: 0;
+        width: 100%;
         padding: 0.5rem;
         font-size: 0.825rem;
-        background: rgba(#222, 0.85);
+        background: rgba(#222, 0.75);
         z-index: 1;
     }
 

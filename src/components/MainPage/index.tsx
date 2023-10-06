@@ -2,6 +2,7 @@ import React from "react";
 import Alert from "../Navbar/Alert";
 import "@/sass/pages/main.scss";
 import CategoryContainer from "./CategoryContainer";
+import Sidebar from "./Sidebar";
 
 const MainPage = () => {
     return (
@@ -18,7 +19,7 @@ const MainPage = () => {
                     <CategoryContainer heading="Top Anime of All Time" />
                     <CategoryContainer heading="Top Upcoming Anime" />
                 </div>
-                <div className="sidebar-container">Sidebar</div>
+                <Sidebar />
             </div>
         </>
     );
