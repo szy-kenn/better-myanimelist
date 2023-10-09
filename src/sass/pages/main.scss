@@ -5,12 +5,12 @@
     position: relative;
     @include padding-large;
     display: grid;
-    grid-template-columns: 1fr 350px;
+    grid-template-columns: 1fr 500px;
     grid-template-rows: 1fr;
     grid-template-areas:
         "main sidebar"
         "main sidebar";
-    gap: 1rem;
+    gap: 2rem;
     width: fit-content;
     margin: auto;
 
@@ -26,13 +26,13 @@
 
 @media screen and (min-width: 1440px) {
     .main {
-        grid-template-columns: 1fr 400px;
+        grid-template-columns: 1fr 500px;
         width: 80vw;
         margin: auto;
 
         .sidebar-container {
-            width: 400px;
-            max-width: 400px;
+            width: 500px;
+            max-width: 500px;
         }
     }
 }
@@ -44,6 +44,7 @@
         grid-template-areas: "sidebar" "main";
 
         .sidebar-container {
+            width: 100%;
             max-width: none;
             max-height: 200px;
             grid-template-rows: 1fr;

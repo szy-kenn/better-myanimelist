@@ -1,0 +1,84 @@
+@use "../abstracts/variables.scss" as *;
+
+.top-anime-card {
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 100px;
+    gap: 1rem;
+
+    h1 {
+        text-align: center;
+        font-size: 3rem;
+        text-align: left;
+        flex: 0.1;
+    }
+
+    .top-anime-content {
+        flex: 0.9;
+        display: flex;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border-radius: 5px;
+        background: rgba(
+            scale-color($color: $dark-secondary-color, $lightness: 10%),
+            0.5
+        );
+        gap: 0.5rem;
+
+        img {
+            position: relative;
+            height: 100%;
+            width: 15%;
+            object-fit: cover;
+        }
+
+        .top-anime-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 0.5rem;
+            height: 100%;
+            width: 100%;
+
+            .top-anime-info-subsection {
+                display: flex;
+                position: relative;
+                gap: 0.5rem;
+
+                div {
+                    display: flex;
+                    gap: 0.25rem;
+
+                    p,
+                    span {
+                        font-size: 0.775rem;
+                        font-weight: 300;
+                    }
+
+                    p {
+                        font-weight: 400;
+                        opacity: 0.75;
+                    }
+
+                    span {
+                        opacity: 0.35;
+                    }
+                }
+            }
+        }
+
+        .score {
+            font-size: 0.875rem;
+            padding: 0.5rem 0.75rem;
+            background: $dark-tertiary-color;
+            border-radius: 5px;
+            font-weight: bold;
+            justify-self: center;
+            align-self: center;
+        }
+    }
+}
