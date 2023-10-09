@@ -1,5 +1,7 @@
 import React from "react";
 import "@/sass/components/sidebar.scss";
+import TopAnimeCard from "./TopAnimeCard";
+import TopAnimeContainer from "./TopAnimeContainer";
 
 const Sidebar = () => {
     return (
@@ -29,6 +31,7 @@ const Sidebar = () => {
             <div className="top-anime-section">
                 <h1>Top Anime</h1>
                 <hr />
+                <TopAnimeContainer />
             </div>
         </div>
     );
