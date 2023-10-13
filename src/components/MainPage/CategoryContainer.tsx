@@ -20,9 +20,13 @@ const CategoryContainer = ({ heading }: { heading: string }) => {
     };
 
     const handleResize = () => {
-        if (window.innerWidth >= 1440) {
+        if (window.innerWidth >= 1820) {
             setCardWidth("15%");
-        } else if (window.innerWidth >= 769 && window.innerWidth < 1439) {
+        } else if (window.innerWidth >= 1440) {
+            setCardWidth("18.5%");
+        } else if (window.innerWidth >= 1000 && window.innerWidth < 1439) {
+            setCardWidth("23%");
+        } else if (window.innerWidth >= 768 && window.innerWidth < 1000) {
             setCardWidth("18.5%");
         } else if (window.innerWidth > 641) {
             setCardWidth("23%");

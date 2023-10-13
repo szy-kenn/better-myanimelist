@@ -14,10 +14,6 @@ const TopAnimeCard = ({ rank, animeId }: { rank: number; animeId: string }) => {
                             <p>TV</p>
                             <span>24 eps</span>
                         </div>
-                        <div className="top-anime-status">
-                            <p>Spring 2011</p>
-                            <span>Finished</span>
-                        </div>
                     </div>
                 </div>
                 <p className="score">9.10</p>
